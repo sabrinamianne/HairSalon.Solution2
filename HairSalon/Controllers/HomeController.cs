@@ -9,7 +9,8 @@ namespace HairSalon.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-      return View();
+      List<Stylist> allstylist = Stylist.GetAll();
+      return View(allstylist);
     }
   }
 }
