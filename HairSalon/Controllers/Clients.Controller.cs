@@ -4,13 +4,12 @@ using System.Collections.Generic;
 
 namespace HairSalon.Controllers
 {
-  public class ClientsController : Controllers
+  public class ClientsController : Controller
   {
-    [HttpGet]
+    [HttpGet("/clients")]
     public ActionResult New()
     {
-      Client client = new Client;
-      return View(client);
+     return View();
     }
   }
 }

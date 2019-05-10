@@ -1,4 +1,33 @@
-.jumbotron
-{
-  background-color: #c6efed;
+.jumbotron {
+  background-color: #efffed;
+  font-family: fantasy;
+  text-align: center;
+  padding-bottom: 1px;
+  padding-top: 1px;
+
+}
+
+body {
+  background-image: url("../img/branches1.jpg");
+  background-repeat: repeat-y;
+  background-position: center;
+}
+
+
+div#footer {
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    background:#efffed;
+    padding:20px;
+}
+
+#secondcol {
+  text-align: right;
+  font-family: fantasy;
+}
+
+#firstcol {
+  font-family: fantasy;
 }

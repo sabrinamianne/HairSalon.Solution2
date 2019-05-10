@@ -1,5 +1,6 @@
-using System.Collection.Generic;
-using MySql.Data.MySqlCLient;
+using System.Collections.Generic;
+using MySql.Data.MySqlClient;
+using System;
 
 namespace HairSalon.Models
 {
@@ -9,7 +10,8 @@ namespace HairSalon.Models
     private int _id;
     private int _stylistId;
 
-    public client (string name, int id=0, int stylistId)
+
+    public Client (string name,  int stylistId, int id=0)
     {
       _name = name;
       _id= id;

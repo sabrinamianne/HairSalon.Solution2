@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace HairSalon.Controllers
 {
-  public class StylistsController : Controllers
+  public class StylistsController : Controller
   {
     [HttpGet]
     public ActionResult Index()

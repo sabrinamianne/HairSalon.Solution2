@@ -2,17 +2,30 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>SK HAIR SALON</title>
+    <title>SK HAIR SALON BIO</title>
     <link rel="shortcut icon" href="../img/icon.ico" type="image/x-icon">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
     <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body>
+    <img src="img/logo.png" id="logo" alt="logo" height="250px">
     <div class="jumbotron">
       <div class= "container">
-        <h1>SK Hair Salon</h1>
+        <h2>SK Hair Salon Bio</h2>
       </div>
     </div>
-    @RenderBody()
+    <div class="container">
+
+        @RenderBody()
+        <div class="row">
+          <div class="col-md-6" id="firstcol">
+            <h2>First Column</h2>
+          </div>
+          <div class="col-md-6" id="secondcol">
+            <h2>Second Column</h2>
+          </div>
+        </div>
+        @Html.Partial("Footer")
+    </div>
   </body>
 </html>
