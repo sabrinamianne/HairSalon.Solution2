@@ -65,7 +65,64 @@ namespace HairSalon.Models
         DateTime clientAppointment = rdr.GetDateTime(1);
         int stylistId = rdr.GetInt32(2);
         int clientId = rdr.GetInt32(3);
-        Client newClient = new Client (clientName, clientAppointment, stylistId, clientId)
+        Client newClient = new Client (clientName, clientAppointment, stylistId, clientId);
+        allClients.Add(newClient);
+      }
+      conn.Close();
+
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return allClients;
+    }
+
+    public void Delete()
+    {
+      MySqlConnection con = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM clients WHERE id=@client_id;";
+      MySqlParameter clientId= new MySqlParameter();
+      clientId.ParameterName = "@client_id";
+      clientId.Value = this._id;
+      cmd.Parameters.Add(clientId);
+      cmd.ExcecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
+
+    public static void ClearAll()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM clients;";
+      cmd.ExecuteNonQuery();
+
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
+
+    public override bool Equals(System.Object otherClient)
+    {
+      if (!(otherClient is Client))
+      {
+        return false;
+      }
+      else
+      {
+        Client newClient = (Client) otherClient;
+        bool idEquality = this.GetId() == newClient.GetId();
+        bool nameEquality = this.GetClientName() == newClient.GetClientName();
+        bool stylistEquality = this.GetStylistId() == newClient.GetStylistId();
+        return(idEquality && nameEquality && stylistEquality);
       }
     }
 
