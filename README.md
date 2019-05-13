@@ -11,8 +11,8 @@ _Create an MVC web application for a hair salon. The owner should be able to add
 ## Specifications
 
 
-| Behavior | Input | Output |
-| ------------- |:-------------:| -----:|
+| Behavior |
+| ------------- |
 | As a salon employee, I need to be able to see a list of all our stylists.|
 | As an employee, I need to be able to select a stylist, see their details, and see a list of all clients that belong to that stylist.|
 | As an employee, I need to add new stylists to our system when they are hired.|
@@ -21,15 +21,15 @@ _Create an MVC web application for a hair salon. The owner should be able to add
 ## Setup/Installation Requirements
 
 *_Clone this repository, use this link : https://github.com/sabrinamianne/HairSalon.Solution.git
-*_Change into the work directory:: $ cd HairSalon.Solution
-*_To edit the project, open it in your a text editor of your choice.
-*_Start MAMP and click Open WebStart page in the MAMP window.
-*_In the website you're taken to, select phpMyAdmin from the Tools dropdown.
-*_Select the Import tab.
-*_Unzip sabrina.mianne.sql.zip and sabrina_mianne_test.sql.zip from the project directory's top level
-*_Select sabrina_mianne.sql and click Go.
-*_Repeat steps 6 and 7 with the file sabrina_mianne_test.sql
-*_To run the program, navigate to the HairSalon directory, then run the following commands: $ dotnet restore $ dotnet run, and open http://localhost:5000/ in your browser
+Change into the work directory:: $ cd HairSalon.Solution
+To edit the project, open it in your a text editor of your choice.
+Start MAMP and click Open WebStart page in the MAMP window.
+In the website you're taken to, select phpMyAdmin from the Tools dropdown.
+Select the Import tab.
+Unzip sabrina.mianne.sql.zip and sabrina_mianne_test.sql.zip from the project directory's top level
+Select sabrina_mianne.sql and click Go.
+Repeat steps 6 and 7 with the file sabrina_mianne_test.sql
+To run the program, navigate to the HairSalon directory, then run the following commands: $ dotnet restore $ dotnet run, and open http://localhost:5000/ in your browser
 
 ## Known Bugs
 
