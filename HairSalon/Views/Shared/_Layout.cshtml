@@ -3,22 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>SK HAIR SALON BIO</title>
-    <link rel="shortcut icon" href="../img/icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="~/img/icon.ico" type="image/x-icon">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
-    <img src="img/logo.png" id="logo" alt="logo" height="250px">
+    <img src= "~/img/logo.png" alt="logo" height="190px" id="logo">
     <div class="jumbotron">
       <div class= "container">
-        <h2>SK Hair Salon Bio</h2>
+        <div class="row">
+          <div class="col-md-12">
+            <h2>SK Hair Salon Bio</h2>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="container">
-
         @RenderBody()
-      
-        @Html.Partial("Footer")
-    </div>
   </body>
 </html>

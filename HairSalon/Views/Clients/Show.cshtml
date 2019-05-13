@@ -1,0 +1,30 @@
+@{
+  Layout = "_Layout";
+}
+<div id="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" id="firstcol">
+        <h1>Clients of @Model["stylist"].GetName()</h1><br><br>
+        <h2>@Model["client"].GetClientName()</h2>
+        <h3>Next Appointement : </h3>
+        <h3>@Model["client"].GetAppDate()</h3><br>
+        <p><a href='/stylists/@Model["stylist"].GetId()/clients/@Model["client"].GetId()/edit'>Change informations of this client</a></p>
+        <p><a href='/stylists/@Model["stylist"].GetId()/clients/@Model["client"].GetId()/delete'>Delete this Client</a></p><br><br><br>
+        </div>
+      <div class="col-md-6" id="secondcol">
+        <br><h1><a href='/stylists/@Model["stylist"].GetId()/clients/new'>Add a new client to @Model["stylist"].GetName()</a></h1><br><br>
+        <h1><a href="/stylists">Back to the list of our Stylists</a></h1>
+        <h1><a href="/">Back home</a></h1><br>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12r">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

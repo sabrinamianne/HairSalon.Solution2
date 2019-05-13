@@ -35,7 +35,7 @@ namespace HairSalon.Models
       return _id;
     }
 
-    public void SetCLienttName(string newName)
+    public void SetClientName(string newName)
     {
       _name = newName;
     }
@@ -61,11 +61,11 @@ namespace HairSalon.Models
 
       while(rdr.Read())
       {
-        string clientName = rdr.GetString(0);
-        DateTime clientAppointment = rdr.GetDateTime(1);
-        int stylistId = rdr.GetInt32(2);
-        int clientId = rdr.GetInt32(3);
-        Client newClient = new Client (clientName, clientAppointment, stylistId, clientId);
+        string client_name = rdr.GetString(0);
+        DateTime client_app = rdr.GetDateTime(1);
+        int stylist_id = rdr.GetInt32(2);
+        int client_id = rdr.GetInt32(3);
+        Client newClient = new Client (client_name, client_app, stylist_id, client_id);
         allClients.Add(newClient);
       }
       conn.Close();
@@ -77,17 +77,50 @@ namespace HairSalon.Models
       return allClients;
     }
 
-    public void Delete()
+    public static Client Find (int id)
     {
-      MySqlConnection con = DB.Connection();
+      MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"DELETE FROM clients WHERE id=@client_id;";
-      MySqlParameter clientId= new MySqlParameter();
-      clientId.ParameterName = "@client_id";
-      clientId.Value = this._id;
-      cmd.Parameters.Add(clientId);
-      cmd.ExcecuteNonQuery();
+      cmd.CommandText = @"SELECT * FROM clients WHERE id = @searchId;";
+      MySqlParameter searchId = new MySqlParameter();
+      searchId.ParameterName = "@searchId";
+      searchId.Value = id;
+      cmd.Parameters.Add(searchId);
+      var rdr = cmd.ExecuteReader() as MySqlDataReader;
+      int client_id= 0;
+      string client_name= "";
+      int stylist_id = 0;
+      DateTime client_app = new DateTime();
+      while(rdr.Read())
+      {
+        client_name = rdr.GetString(0);
+        client_app =rdr.GetDateTime(1);
+        stylist_id = rdr.GetInt32(2);
+        client_id = rdr.GetInt32(3);
+      }
+      Client foundClient= new Client (client_name, client_app, stylist_id, client_id);
+
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return foundClient;
+    }
+
+
+    public void Delete()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM clients WHERE id=@id;";
+      MySqlParameter client_id= new MySqlParameter();
+      client_id.ParameterName = "@id";
+      client_id.Value = this._id;
+      cmd.Parameters.Add(client_id);
+      cmd.ExecuteNonQuery();
       conn.Close();
       if (conn != null)
       {
@@ -147,7 +180,7 @@ namespace HairSalon.Models
       MySqlParameter stylistParameter = new MySqlParameter();
       stylistParameter.ParameterName = "@ClientStylisId";
       stylistParameter.Value = this._stylistId;
-      cmd.Parameters.Add(stylystParameter);
+      cmd.Parameters.Add(stylistParameter);
 
       cmd.ExecuteNonQuery();
 
@@ -160,13 +193,13 @@ namespace HairSalon.Models
       }
     }
 
-    public void Edit(string newName , DateTime newdappointmentDate)
+    public void Edit(string newName , DateTime newAppointment )
     {
      MySqlConnection conn = DB.Connection();
      conn.Open();
      var cmd = conn.CreateCommand() as MySqlCommand;
-     cmd.CommandText = @"UPDATE clients SET name = @newName WHERE id = @searchId;";
-     cmd.CommandText = @"UPDATE clients SET appointment = @newdappointmentDate WHERE id = @searchId;";
+     cmd.CommandText = @"UPDATE clients SET name = @newName, appointment = @newAppointment WHERE id = @searchId;";
+
      MySqlParameter searchId = new MySqlParameter();
      searchId.ParameterName = "@searchId";
      searchId.Value = _id;
@@ -174,16 +207,17 @@ namespace HairSalon.Models
 
      MySqlParameter name = new MySqlParameter();
      name.ParameterName = "@newname";
-     .Value = newName;
+     name.Value = newName;
      cmd.Parameters.Add(name);
+
      MySqlParameter appointment = new MySqlParameter();
-     appointment.ParameterName = "@newappointmentDate";
-     appointment.Value = newappointmentDate;
+     appointment.ParameterName = "@newAppointment ";
+     appointment.Value = newAppointment ;
      cmd.Parameters.Add(appointment);
      cmd.ExecuteNonQuery();
 
      _name = newName;
-     _appointment = newappointmentDate;
+     _appointmentdate = newAppointment ;
 
      conn.Close();
      if (conn != null)
@@ -191,42 +225,6 @@ namespace HairSalon.Models
       conn.Dispose();
      }
     }
-
-    public static Client Find (int id)
-    {
-
-      MySqlConnection conn = DB.Connection();
-      conn.Open();
-      var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM clients WHERE id = (@searchId);";
-      MySqlParameter idParameter = new MySqlParameter();
-      idParameter.ParameterName = "@searchId";
-      idParameter.Value = id;
-      cmd.Parameters.Add(idParameter);
-      var rdr = cmd.ExecuteReader() as MySqlDataReader;
-      int clientId=0;
-      string clientName ="";
-      DateTime clientAppointmentDate = new DateTime();
-      int clientStylistId = 0;
-
-      while(rdr.Read())
-      {
-      string clientName = rdr.GetString(0);
-      DateTime clientAppointment = rdr.GetDateTime(1);
-      int stylistId = rdr.GetInt32(2);
-      int clientId = rdr.GetInt32(3);
-      }
-      Client foundClient= new Client (clientName, clientAppointment, stylistId, clientId);
-
-      conn.Close();
-      if(conn != null)
-      {
-        conn.Dispose();
-      }
-      return foundClient;
-    }
-
-
 
 
 

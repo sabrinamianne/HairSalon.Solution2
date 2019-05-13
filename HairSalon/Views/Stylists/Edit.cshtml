@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+<div id="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" id="firstcol">
+        <h2>Update Name of @Model.GetName()</h2><br>
+        <form action="/stylists/@Model.GetId()/update" method="post">
+          <h2><label for="newName">New Name:</label><br></h2>
+          <input type="text" name="newName" value="@Model.GetName()"><br><br>
+          <button class="second" type="submit">Edit</button><br><br>
+        </form>
+      </div>
+      <div class="col-md-6" id="secondcol">
+        <h1><a href="/stylists/">Return to previous page</a></h1>
+        <h1><a href="/">Back home</a></h1><br>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12r">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

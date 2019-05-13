@@ -1,0 +1,40 @@
+@{
+  Layout = "_Layout";
+}
+<div id="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7" id="firstcol">
+        @if (@Model.Count == 0)
+          {
+            <h3>No stylist have been hired yet!</h3>
+          }
+        @if (@Model.Count != 0)
+        {
+          <h1>Stylists of SK Hair Salon Bio </h1><br>
+        @foreach (var stylist in Model)
+          {
+            <a href='/stylists/@stylist.GetId()'>@stylist.GetName()</a>
+            <h3>Numbers of Clients:  @stylist.GetCountClients()</h3><br>
+            <a href='/stylists/@stylist.GetId()/edit'>Update the name of @stylist.GetName()</a><br>
+            <form action="/stylists/@stylist.GetId()/delete" method="post">
+              <button class="second2" type="submit" name="button">Delete @stylist.GetName()</button><br><br>
+            </form>
+          }
+        }
+      </div>
+      <div class="col-md-5" id="secondcol">
+        <a href='/stylists/new'>Add a new Stylist</a><br>
+        <a href="/">Back home</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12r">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

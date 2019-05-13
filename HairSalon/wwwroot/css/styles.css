@@ -1,10 +1,15 @@
 .jumbotron {
-  background-color: #efffed;
+  background-color: #b3c9b1;
   font-family: fantasy;
-  text-align: center;
   padding-bottom: 1px;
   padding-top: 1px;
+  margin-bottom: 30px;
+  background-position: top;
+  width: 100%;
+}
 
+#logo {
+  margin-right: 1100px;
 }
 
 body {
@@ -14,22 +19,74 @@ body {
 }
 
 
-div#footer {
-    position:fixed;
-    bottom:0px;
-    left:0px;
-    width:100%;
-    background:#efffed;
-    padding:20px;
+.footer {
+  background-color:#b3c9b1;
+  position:absolute;
+  bottom:0;
+  width:120%;
+  padding-top:10px;
+  padding-bottom: 1px;
+  height:40px;
+
 }
 
 #secondcol {
   text-align: right;
   font-family: fantasy;
+
 }
 
-#firstcol {
-
+#firstcol{
+  text-align: left;
   font-family: fantasy;
+}
 
+
+a {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: Times,inherit;
+  color: #cc9dac;
+}
+
+a:hover{
+  color: #996485;
+  text-decoration: underline;
+}
+
+.second {
+  font-size: 22px;
+  height: 45px;
+  background-color:  #b3c9b1;
+  color: black;
+}
+
+.second2 {
+  font-size: 22px;
+  height: 45px;
+  background-color: #e4c9e5;
+  color: black;
+}
+
+*{
+margin:0;
+padding:0;
+}
+
+body, html{height:100%;}
+
+body {
+
+text-align:center;
+
+}
+
+#main {
+
+max-width:1500px;
+min-height:100%;
+margin:0 auto;
+position:relative;
+padding-bottom: 20px;
+margin-left: 1px;
 }

@@ -1,13 +1,32 @@
 @{
   Layout = "_Layout";
 }
+<div id="main">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6" id="firstcol">
+      <h1>New Hire</h1><br>
+      <h3><a href='/stylists/new'>Add a new Stylist</a></h3><br>
+      <h3><a href="/stylists">List of our Stylists</a><h3>
 
-
-<div class="row">
-  <div class="col-md-6" id="firstcol">
-    <h3>Make an Appointement</h3>
+    </div>
+    <div class="col-md-6" id="secondcol">
+      <h1>Our Stylists</h1><br>
+        <ul>
+          @foreach ( var stylist in Model)
+          {
+            <a href='/stylists/@stylist.GetId()'>@stylist.GetName()</a><br>
+          }
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="col-md-6" id="secondcol">
-    <h3>Our Stylist</h3>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12r">
+        </div>
+      </div>
+    </div>
   </div>
 </div>

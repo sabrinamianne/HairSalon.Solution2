@@ -1,0 +1,33 @@
+@{
+  Layout = "_Layout";
+}
+<div id="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" id="firstcol">
+        <h1>Add a client to @Model.GetName()</h1>
+          <form class="form" action='/stylists/@Model.GetId()/clients' method='post'><h3>
+          <input id='stylistId' name='stylistId' type='hidden' value='@Model.GetId()'>
+          <label for='clientName'>Client Name : </label><br>
+          <input id='clientName' name='clientName' type='text' placeholder="David Jones" required><br><br>
+          <label for='appDate'>Appointment Date : </label><br>
+          <input id='appDate' name='appDate' type="date"><br><br><br></h3>
+          <h3><button class="second" type='submit'>Add a Client</button></h3><br>
+        </form>
+      </div>
+      <div class="col-md-6" id="secondcol">
+        <h1>Numbers of Clients:  @Model.GetCountClients()</h1><br>
+        <a href="/stylists">Back to the list of our Stylists</a><br>
+        <a href="/">Back home</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12r">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

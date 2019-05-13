@@ -1,0 +1,38 @@
+@{
+  Layout = "_Layout";
+}
+<div id="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" id="firstcol">
+        <h2>Here all clients of @Model["stylist"].GetName() </h2><br>
+
+        @if (@Model["clients"].Count == 0)
+          {
+            <h3>You have no clients in your list.</h3>
+          }
+          @if (@Model["clients"].Count !=0)
+          {
+            @foreach (var client in @Model["clients"])
+            {
+            <li><a href='/stylists/@Model["stylist"].GetId()/clients/@client.GetId()'>
+            @client.GetClientName()</a></li><br>
+            }
+          }
+            <br><a href='/stylists/@Model["stylist"].GetId()/clients/new'>Add a new client</a><br>
+      </div>
+      <div class="col-md-6" id="secondcol">
+        <h1><a href="/stylists">Back to the list of our Stylists</a></h1>
+        <h1><a href="/">Back home</a></h1><br>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12r">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
