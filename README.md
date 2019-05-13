@@ -31,7 +31,6 @@ _Create an MVC web application for a hair salon. The owner should be able to add
 *_Repeat steps 6 and 7 with the file sabrina_mianne_test.sql
 *_To run the program, navigate to the HairSalon directory, then run the following commands: $ dotnet restore $ dotnet run, and open http://localhost:5000/ in your browser
 *_In SQL, if you want to add table:
-_CREATE DATABASE to_do;
 _ USE sabrina_mianne;
 _CREATE TABLE owners (id serial PRIMARY KEY, name VARCHAR(255));
 _CREATE TABLE tasks (id serial PRIMARY KEY, description VARCHAR(255));
