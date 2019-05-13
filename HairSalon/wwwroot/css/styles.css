@@ -23,7 +23,7 @@ body {
   background-color:#b3c9b1;
   position:absolute;
   bottom:0;
-  width:120%;
+  width:130%;
   padding-top:10px;
   padding-bottom: 1px;
   height:40px;
@@ -33,7 +33,11 @@ body {
 #secondcol {
   text-align: right;
   font-family: fantasy;
+}
 
+#secondcol a{
+  text-align: right;
+  font-family: fantasy;
 }
 
 #firstcol{
@@ -83,7 +87,7 @@ text-align:center;
 
 #main {
 
-max-width:1500px;
+max-width:2000px;
 min-height:100%;
 margin:0 auto;
 position:relative;

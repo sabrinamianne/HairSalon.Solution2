@@ -7,10 +7,10 @@
       <div class="col-md-6" id="firstcol">
         <h2>Edit client: @Model["client"].GetClientName()</h2>
         <form action="/stylists/@Model["stylist"].GetId()/clients/@Model["client"].GetId()" method="post">
-          <label for="newName">Name:</label>
-          <input type="text" name="newName" value="@Model["client"].GetClientName()"><br><br>
-          <label for="newAppointment">Appointment:</label>
-          <input type="date" name="newAppointment" value="@Model["client"].GetAppDate()"><br><br>
+          <h3><label for="newName">Name:</label><br>
+          <input type="text" name="newName" value="@Model["client"].GetClientName()"></h3>
+          <h3><label for="newAppointment">Appointment:</h3></label>
+          <input type="date" name="newAppointment" value="@Model["client"].GetAppDate()"><br><br><br>
           <button class="second" type="submit">Edit</button>
         </form>
       </div>

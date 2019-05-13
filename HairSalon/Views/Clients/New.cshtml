@@ -3,8 +3,8 @@
 }
 <div id="main">
   <div class="container">
-    <div class="row">
-      <div class="col-md-6" id="firstcol">
+    <div class="row no-gutters">
+      <div class="col-12 col-md-6 col-lg-8" id="firstcol">
         <h1>Add a client to @Model.GetName()</h1>
           <form class="form" action='/stylists/@Model.GetId()/clients' method='post'><h3>
           <input id='stylistId' name='stylistId' type='hidden' value='@Model.GetId()'>
@@ -15,9 +15,9 @@
           <h3><button class="second" type='submit'>Add a Client</button></h3><br>
         </form>
       </div>
-      <div class="col-md-6" id="secondcol">
-        <h1>Numbers of Clients:  @Model.GetCountClients()</h1><br>
-        <a href="/stylists">Back to the list of our Stylists</a><br>
+      <div class="col-6 col-lg-4" id="secondcol">
+        <h2>Numbers of Clients:  @Model.GetCountClients()</h2><br>
+        <a href="/stylists">List of our Stylists</a><br>
         <a href="/">Back home</a>
       </div>
     </div>
