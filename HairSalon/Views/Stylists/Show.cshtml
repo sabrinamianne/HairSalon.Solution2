@@ -20,6 +20,9 @@
             }
           }
             <br><a href='/stylists/@Model["stylist"].GetId()/clients/new'>Add a new client</a><br>
+            <form action="/stylists/@Model["stylist"].GetId()/clients/delete" method="post">
+              <br><br><button class="second2" type="submit" name="button">Delete ALL Clients</button><br><br><br>
+            </form>
       </div>
       <div class="col-6 col-lg-4"id="secondcol"><br>
         <a href="/stylists">List of our Stylists</a><br>
