@@ -15,8 +15,9 @@
           @foreach (var stylist in Model)
           {
             <a href='/stylists/@stylist.GetId()'>@stylist.GetName()</a>
-            <h3>Numbers of Clients:  @stylist.GetCountClients()</h3><br>
-            <a href='/stylists/@stylist.GetId()/edit'>Update the name of @stylist.GetName()</a><br>
+            <h3>Number of Clients:  @stylist.GetCountClients()</h3>
+            <h3>Number of Specialties: @stylist.GetSpecialties().Count</h3>
+            <a href='/stylists/@stylist.GetId()/edit'>Update the name of @stylist.GetName()</a><br><br>
             <form action="/stylists/@stylist.GetId()/delete" method="post">
               <button class="second2" type="submit" name="button">Delete @stylist.GetName()</button><br><br><br>
             </form>
@@ -27,8 +28,13 @@
         </form>
       </div>
       <div class="col-6 col-lg-4" id="secondcol">
-        <a href='/stylists/new'>Add a new Stylist</a><br>
-        <a href="/">Back home</a>
+        <h1>Hair Salon Bio</h1><br><br>
+        <a href='/stylists/new'>Add a new Stylist</a>
+        <form action="/stylists/delete" method="post">
+          <br><button class="second2" type="submit" name="button">Delete ALL Stylists</button><br><br><br>
+        </form>
+        <a href='/specialties'>List of all Specialties</a>
+        <br><br><a href="/">Back home</a>
       </div>
     </div>
   </div>

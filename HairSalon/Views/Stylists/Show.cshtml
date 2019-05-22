@@ -8,7 +8,7 @@
   <div class="container">
     <div class="row no-gutters">
       <div class="col-12 col-md-6 col-lg-7" id="firstcol">
-        <h2>Here all clients of @Model["stylist"].GetName() </h2><br>
+        <h2>Here all clients of @Model["stylist"].GetName() </h2><br><br><br>
 
         @if (@Model["clients"].Count == 0)
           {
@@ -22,9 +22,9 @@
             @client.GetClientName()</a></li><br>
             }
           }
-            <p><a href='/stylists/@Model["stylist"].GetId()/clients/new'>Add a new client</a><p>
+            <br><br><a href='/stylists/@Model["stylist"].GetId()/clients/new'>Add a new client</a>
             <form action="/stylists/@Model["stylist"].GetId()/clients/delete" method="post">
-              <br><br><button class="second2" type="submit" name="button">Delete ALL Clients</button><br><br><br>
+              <br><button class="second2" type="submit" name="button">Delete ALL Clients</button><br><br><br>
             </form>
       </div>
       <div class="col-6 col-lg-5"id="secondcol">
@@ -53,8 +53,9 @@
            </select>
            <button class="second" type="submit">Add</button>
          </form>
-        <br><br><h1><a href="/specialties/new">Add a Specialty</a></h1>
-        <a href="/stylists">List of our Stylists</a><br>
+        <br><br><h1><a href="/specialties/new">Add a Specialty</a></h1><br>
+        <a href="/specialties">List of all Specialties</a><br>
+        <a href="/stylists">List of all Stylists</a><br>
         <a href="/">Back home</a><br>
       </div>
     </div>

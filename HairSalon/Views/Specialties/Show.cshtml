@@ -29,7 +29,7 @@
 
          @if(@Model.GetStylists().Count > 0)
          {
-           <h3>Stylists specialized in the specialty : @Model.GetName()  </h3>
+           <h3>Stylists specialized in the specialty : @Model.GetName()  </h3><br><br><br>
              <ul>
                  @foreach(Stylist stylist in @Model.GetStylists())
                  {
