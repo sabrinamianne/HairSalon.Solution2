@@ -97,7 +97,6 @@ namespace HairSalon.Controllers
         Specialty addedSpecialty = Specialty.Find(specialty);
         Stylist stylist = Stylist.Find(stylistId);
         stylist.AddSpecialty(addedSpecialty);
-        Console.WriteLine(specialty);
         return RedirectToAction("Show");
       }
 
