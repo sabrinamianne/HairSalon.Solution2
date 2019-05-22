@@ -145,15 +145,16 @@ namespace HairSalon.Models
         MySqlConnection conn = DB.Connection();
         conn.Open();
         var cmd = conn.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"DELETE FROM specialties WHERE id = @SpecialtyId;";
-        MySqlParameter specialtyIdParameter = new MySqlParameter();
-        specialtyIdParameter.ParameterName = "@SpecialtyId";
-        specialtyIdParameter.Value = _id;
-        cmd.Parameters.Add(specialtyIdParameter);
+        cmd.CommandText = @"DELETE FROM stylist_specialties WHERE specialty_id=@SpecialtyId;";
+        MySqlParameter specialtyId = new MySqlParameter();
+        specialtyId.ParameterName = "@SpecialtyId";
+        specialtyId.Value = this._id;
+        cmd.Parameters.Add(specialtyId);
         cmd.ExecuteNonQuery();
+        conn.Close();
         if (conn != null)
         {
-          conn.Close();
+          conn.Dispose();
         }
       }
 
