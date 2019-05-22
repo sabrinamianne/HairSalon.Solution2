@@ -1,10 +1,13 @@
 @{
   Layout = "_Layout";
 }
+@using HairSalon.Models;
+
+
 <div id="main">
   <div class="container">
     <div class="row no-gutters">
-      <div class="col-12 col-md-6 col-lg-8" id="firstcol">
+      <div class="col-12 col-md-6 col-lg-7" id="firstcol">
         <h2>Here all clients of @Model["stylist"].GetName() </h2><br>
 
         @if (@Model["clients"].Count == 0)
@@ -19,12 +22,38 @@
             @client.GetClientName()</a></li><br>
             }
           }
-            <br><a href='/stylists/@Model["stylist"].GetId()/clients/new'>Add a new client</a><br>
+            <p><a href='/stylists/@Model["stylist"].GetId()/clients/new'>Add a new client</a><p>
             <form action="/stylists/@Model["stylist"].GetId()/clients/delete" method="post">
               <br><br><button class="second2" type="submit" name="button">Delete ALL Clients</button><br><br><br>
             </form>
       </div>
-      <div class="col-6 col-lg-4"id="secondcol"><br>
+      <div class="col-6 col-lg-5"id="secondcol">
+      <h1>Specialties</h1><br>
+      @if(@Model["stylist"].GetSpecialties().Count <= 0)
+       {
+           <h3>@Model["stylist"].GetName() has no specialties</h3>
+       }
+       @if(@Model["stylist"].GetSpecialties().Count > 0)
+       {
+           <ul>
+               @foreach(Specialty spec in @Model["stylist"].GetSpecialties())
+               {
+                   <p><a href="/specialties/@spec.GetId()/">@spec.GetName()</a></p>
+               }
+           </ul>
+         }
+         <form action='/stylists/@Model["stylist"].GetId()/specialties/add' method="post">
+          <h3><label for="specialty" style="color: #b3c9b1;">Add a specialty to @Model["stylist"].GetName()</label></h3>
+           <select name="specialty" id="selection">
+             <option disabled selected value>Select</option>
+             @foreach(Specialty specialty in @Specialty.GetAll())
+             {
+               <option value="@specialty.GetId()">@specialty.GetName()</option>
+             }
+           </select>
+           <button class="second" type="submit">Add</button>
+         </form>
+        <br><br><h1><a href="/specialties/new">Add a Specialty</a></h1>
         <a href="/stylists">List of our Stylists</a><br>
         <a href="/">Back home</a><br>
       </div>

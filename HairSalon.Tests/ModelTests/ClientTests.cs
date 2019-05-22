@@ -53,5 +53,6 @@ namespace HairSalon.Tests
       List<Client> result = Client.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+    
   }
 }

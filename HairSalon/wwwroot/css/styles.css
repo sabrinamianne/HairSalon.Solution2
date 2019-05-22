@@ -6,6 +6,7 @@
   margin-bottom: 30px;
   background-position: top;
   width: 100%;
+
 }
 
 #logo {
@@ -18,12 +19,11 @@ body {
   background-position: center;
 }
 
-
 .footer {
   background-color:#b3c9b1;
   position:absolute;
   bottom:0;
-  width:130%;
+  width:100%;
   padding-top:10px;
   padding-bottom: 1px;
   height:40px;
@@ -60,7 +60,7 @@ a:hover{
 
 .second {
   font-size: 22px;
-  height: 45px;
+  height: 35px;
   background-color:  #b3c9b1;
   color: black;
 }
@@ -86,11 +86,17 @@ text-align:center;
 }
 
 #main {
-
 max-width:2000px;
 min-height:100%;
 margin:0 auto;
 position:relative;
 padding-bottom: 20px;
 margin-left: 1px;
+}
+
+#selection {
+  width: 190px;
+  margin-right: 20px;
+  height: 32px;
+  background-color:   #b3c9b1;
 }
