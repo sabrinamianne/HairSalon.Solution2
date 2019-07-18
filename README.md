@@ -4,6 +4,11 @@
 
 #### _By** Sabrina M**_
 
+
+![alt text](https://github.com/sabrinamianne/HairSalon.Solution2/blob/master/Screen%20Shot%202019-07-17%20at%204.21.54%20PM.png)
+
+
+
 ## Description
 
 _Create an MVC web application for a hair salon. The owner should be able to add a list of the stylists, and for each stylist, add clients who see that stylist. The stylists work independently, so each client only belongs to a single stylist.
