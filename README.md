@@ -5,7 +5,7 @@
 #### _By** Sabrina M**_
 
 
-![alt text](https://github.com/sabrinamianne/HairSalon.Solution2/blob/master/Screen%20Shot%202019-07-17%20at%204.21.54%20PM.png)
+![alt text](https://github.com/sabrinamianne/HairSalon.Solution2/blob/master/IMG_0078.jpg)
 
 
 
